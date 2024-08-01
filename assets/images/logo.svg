@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="250" viewBox="0 0 500 250">
+  <defs>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a0d8ef;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8acff9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="dropShadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> 
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Stylized cloud background -->
+  <path d="M20,130 Q60,70 120,100 T240,80 T380,100 Q440,70 480,130 Q500,180 430,220 H70 Q0,180 20,130 Z" fill="url(#cloudGradient)" filter="url(#dropShadow)"/>
+  
+  <!-- Main text "FARTMAN" -->
+  <text x="250" y="200" font-family="Arial Black, Impact, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#4a4a4a" filter="url(#dropShadow)">FARTMAN</text>
+  
+  <!-- Cartoon face -->
+  <g transform="translate(175, 30) scale(0.75)">
+    <!-- Eyes -->
+    <ellipse cx="70" cy="40" rx="25" ry="20" fill="#fff" stroke="#4a4a4a" stroke-width="3"/>
+    <ellipse cx="230" cy="40" rx="25" ry="20" fill="#fff" stroke="#4a4a4a" stroke-width="3"/>
+    <circle cx="70" cy="40" r="10" fill="#4a4a4a"/>
+    <circle cx="230" cy="40" r="10" fill="#4a4a4a"/>
+    
+    <!-- Eyebrows -->
+    <path d="M45,25 Q70,15 95,25" fill="none" stroke="#4a4a4a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M205,25 Q230,15 255,25" fill="none" stroke="#4a4a4a" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Smirk -->
+    <path d="M100,80 Q150,100 200,80" fill="none" stroke="#4a4a4a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Animated fart clouds -->
+  <g>
+    <circle cx="50" cy="210" r="15" fill="#a0e5a0" opacity="0.7">
+      <animate attributeName="cy" values="210;190;210" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="220" r="12" fill="#a0e5a0" opacity="0.7">
+      <animate attributeName="cy" values="220;205;220" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="12;15;12" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="480" cy="200" r="10" fill="#a0e5a0" opacity="0.7">
+      <animate attributeName="cy" values="200;185;200" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="r" values="10;13;10" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
